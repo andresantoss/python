@@ -1,29 +1,4 @@
-"""   CEUB   -   Bacharelado em Ciência da Computação (BCC)   -   Prof. Barbosa
-Teclas de atalho: ctlr <d>, duplica linha. ctrl <y>, apaga linha. ctrl </>, comenta linha.
-
-Monitoria (plantão de dúvidas, de segunda a sexta). Link: monitoria-bcc.herokuapp.com
-- Taguatinga: lab. 174, das 11h às 12h30            lab. 173, das 17h30 às 19h
-- Asa Norte:  lab. 8202, das 17h30 às 19h
-"""
 def mostra_tabela_simbolos():
-    # print(f'Tabela de símbolos:\n{tabela_simbolos}')    # Solução 1
-    # print('Tabela de símbolos - in:')                   # Solução 2
-    # for simbolo in tabela_simbolos:
-    #     print(simbolo)
-    # print('Tabela de símbolos - in:')                   # Solução 3
-    # ct = 0
-    # for simbolo in tabela_simbolos:
-    #     print(f"{ct} - {simbolo}")
-    #     ct += 1
-    # print('Tabela de símbolos - enumerate - com 0:')    # Solução 4
-    # for posicao, simbolo in enumerate(tabela_simbolos):
-    #     print(f"{posicao} - {simbolo}")
-    # print('Tabela de símbolos - enumerate - sem 0:')    # Solução 5
-    # for posicao, simbolo in enumerate(tabela_simbolos):
-    #     if posicao == 0:
-    #         ...                             # pass
-    #     else:
-    #         print(f"{posicao} - {simbolo}")
     print('Tabela de símbolos - len e vetor:')          # Solução 6
     for p in range(1, len(tabela_simbolos)):
         print(f"{p} - {tabela_simbolos[p]}")
