@@ -1,4 +1,5 @@
 import re                                                                                       # Impote biblioteca regexp 
+
 def mostra_tabela_simbolos():                                                                   # Função para mostrar a tabela de simbolos
     print('\nTabela de símbolos - len e vetor:')                                                # Print Tabela de símbolos - len e vetor:
     for p in range(1, len(tabela_simbolos)):                                                    # For para ajustar a formatação do print
@@ -9,6 +10,7 @@ if __name__ == '__main__':                                                      
     lista_fluxo_caracteres = []                                                                 # Definição da lista de lista_fluxo_caracteres vasia
     tabela_simbolos = []                                                                        # Definição da lista de tabela_simbolos vasia
     tabela_simbolos.append('')                                                                  # Usando a posição 0
+    # fluxo_caracteres = input('Digite uma expressão: ')
     fluxo_caracteres = 'valor4 = nota33 + valor4 * 23 # Comentários ...'                        # Teste sem input
     fluxo_caracteres = re.sub(r'#.*', '', fluxo_caracteres)                                     # Retirando comentarios do input
     tamanho = len(fluxo_caracteres)                                                             # Definindo o tamanho da input 
@@ -19,6 +21,7 @@ if __name__ == '__main__':                                                      
         if c_atual.isdigit() or c_atual.isalpha():                                              # Verifica se o caracter atual e digito ou nuimerico
             lexema += c_atual                                                                   # Adiciona no lexema o caracter
         if c_atual.isdigit():                                                                   # Verifica se o caracter atual e digito
+            
             if i < tamanho-1:                                                                   # Caso o tamanho - 1 for menor que a posição i
                 c_proximo = fluxo_caracteres[i+1]                                               # Define c_proximo como fluxo_caracteres proximo
             else:                                                                               # Do contrario
@@ -37,19 +40,20 @@ if __name__ == '__main__':                                                      
                         lexema = ""                                                             # Lexema vasio
                 else:                                                                           # Do contrario
                     fluxo_tokens += f'<{lexema}>'                                               # Fluxo_tokens += "<"+lexema+">"
-                lexema = ""                                                                     # Lexema vasio
+                    lexema = ""                                                                     # Lexema vasio
         elif c_atual.isalpha():                                                                 # Verifica se o caracter atual e numerico
+            
             if i < tamanho-1:                                                                   # Caso o tamanho - 1 for menor que a posição i
                  c_proximo = fluxo_caracteres[i+1]                                              # Define c_proximo como fluxo_caracteres proximo
             else:                                                                               # Do contrario
                  c_proximo = " "                                                                # Define como espaço
-            if c_proximo == " ":                                                                # Caso c_proximo seja espaço
+            if c_proximo == " ":                                                                # Caso c_proximo seja espaço   --- Para que retire o numero coloque if not  c_proximo.isalpha()
                 if lexema in tabela_simbolos:                                                   # Verifica se o lexema atual esta na tabela_simbolos
                     posicao_atual = tabela_simbolos.index(f"{lexema}")                          # Define a posicao_atual como tabela_simbolos com a posição do lexema para gerar o fluxo de tokens
                     fluxo_tokens += f"<id,{posicao_atual}>"                                     # Fluxo_tokens += "<"+lexema+">"
                     posicao +=1                                                                 # Proxima posição
                     lexema=""                                                                   # Lexema vasio
-            else:                                                                               # Do contrario
+                else:                                                                               # Do contrario
                     fluxo_tokens += f'<id,{posicao}>'                                           # Fluxo_tokens += "<"+lexema+">"
                     posicao += 1                                                                # Proxima posição
                     tabela_simbolos.append(lexema)                                              # Aprendeno o lexema atual
