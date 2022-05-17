@@ -23,18 +23,10 @@ if __name__ == '__main__':
             #lexema += c_atual
             if i < tamanho-1:
                 c_proximo = fluxo_caracteres[i+1]
-                c_antes = fluxo_caracteres[i-1]
-                c_2antes = fluxo_caracteres[i-2]
-                c_3antes = fluxo_caracteres[i-3]
-                c_4antes = fluxo_caracteres[i-4]
             else:
                 c_proximo = " "
-                c_antes = " "
-                c_2antes = " "
-                c_3antes = " "
-                c_4antes = " "
-            if c_proximo == " ":
-                if c_antes.isalpha() or c_antes.isdigit() and c_2antes.isalpha() or c_3antes.isalpha() or c_4antes.isalpha():
+            if not c_proximo.isdigit():
+                if not lexema.isdigit():
                     if lexema in tabela_simbolos:
                         posicao_atual = tabela_simbolos.index(f"{lexema}")
                         fluxo_tokens += f'<id,{posicao_atual}>'  # fluxo_tokens += "<"+lexema+">"
