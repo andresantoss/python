@@ -10,7 +10,7 @@ if __name__ == '__main__':                                                      
     lista_fluxo_caracteres = []                                                                 # Definição da lista de lista_fluxo_caracteres vasia
     tabela_simbolos = []                                                                        # Definição da lista de tabela_simbolos vasia
     tabela_simbolos.append('')                                                                  # Usando a posição 0
-    # fluxo_caracteres = input('Digite uma expressão: ')
+    #fluxo_caracteres = input('Digite uma expressão: ')                                         #entrada via input
     fluxo_caracteres = 'valor4 = nota33 + valor4 * 23 # Comentários ...'                        # Teste sem input
     fluxo_caracteres = re.sub(r'#.*', '', fluxo_caracteres)                                     # Retirando comentarios do input
     tamanho = len(fluxo_caracteres)                                                             # Definindo o tamanho da input 
