@@ -40,7 +40,7 @@ if __name__ == '__main__':                                                      
                         lexema = ""                                                             # Lexema vasio
                 else:                                                                           # Do contrario
                     fluxo_tokens += f'<{lexema}>'                                               # Fluxo_tokens += "<"+lexema+">"
-                    lexema = ""                                                                     # Lexema vasio
+                    lexema = ""                                                                 # Lexema vasio
         elif c_atual.isalpha():                                                                 # Verifica se o caracter atual e numerico
             
             if i < tamanho-1:                                                                   # Caso o tamanho - 1 for menor que a posição i
@@ -53,7 +53,7 @@ if __name__ == '__main__':                                                      
                     fluxo_tokens += f"<id,{posicao_atual}>"                                     # Fluxo_tokens += "<"+lexema+">"
                     posicao +=1                                                                 # Proxima posição
                     lexema=""                                                                   # Lexema vasio
-                else:                                                                               # Do contrario
+                else:                                                                           # Do contrario
                     fluxo_tokens += f'<id,{posicao}>'                                           # Fluxo_tokens += "<"+lexema+">"
                     posicao += 1                                                                # Proxima posição
                     tabela_simbolos.append(lexema)                                              # Aprendeno o lexema atual
